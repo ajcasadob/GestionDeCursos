@@ -25,6 +25,11 @@ public class Course {
 
 
 
+    private Integer durationHours;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private CourseLvL level;
 
 
 

@@ -33,4 +33,8 @@ public class Enrollment {
 
     private LocalDateTime enrolledAt;
 
+    private EnrollmentStatus status;
+
+    private Integer progressPercent;
+
 }

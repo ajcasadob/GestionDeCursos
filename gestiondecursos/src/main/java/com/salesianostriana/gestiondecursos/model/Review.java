@@ -28,5 +28,8 @@ public class Review {
     @JoinColumn(name = "course_id",nullable = false)
     private Course course;
 
+    private Integer rating;
+    private String comment;
+
     private LocalDateTime createdAt;
 }

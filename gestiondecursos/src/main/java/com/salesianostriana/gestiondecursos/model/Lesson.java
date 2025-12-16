@@ -16,7 +16,10 @@ public class Lesson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private String title,content;
+
+    private Integer orderIndex,durationMinutes;
+
 
 
     @ManyToOne(fetch = FetchType.LAZY)
