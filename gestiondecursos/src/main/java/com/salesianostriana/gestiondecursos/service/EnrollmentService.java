@@ -5,9 +5,9 @@ import com.salesianostriana.gestiondecursos.repository.CourseRepository;
 import com.salesianostriana.gestiondecursos.repository.EnrollmentRepository;
 import com.salesianostriana.gestiondecursos.repository.ReviewRepository;
 import com.salesianostriana.gestiondecursos.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public class EnrollmentService {
 
 
 
-
+    @Transactional
     public Enrollment enrollUserInCourse(Long userId, Long courseId) {
 
         User user = UserRepository.findById(userId)
@@ -49,6 +49,7 @@ public class EnrollmentService {
         return enrollmentRepository.save(enrollment);
     }
 
+    @Transactional
     public Enrollment updateEnrollmentProgress(Long userId, Long courseId, Integer progressPercent) {
 
         if (progressPercent < 0 || progressPercent > 100) {
